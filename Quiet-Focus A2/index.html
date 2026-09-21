@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Quiet Focus</title>
+
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+<!-- In this assignment project, I chose the context: music for relaxation/study. I redesigned the website, called Quiet Focus.
+In terms of the overall style, as its based on study or relaxation, I think the website should have a chill and calm atomsphere. Also, focus is a very important element, because users want to focus during study. 
+Therefore, my design adapts clean layouts, and use of light green and grey as main color.
+
+To enhance usability, I made an extra timer feature, locating beside the media player. This is because a timer can let users to better feel time during study. 
+By choosing the preferred time, users can better achieve the aim of focus.
+-->
+
+<!--I place the leaf logo at top left of the page, that connects with the landscape and green colours, which convey a theme of calmness. 
+I removed navigation from the earlier version because this short page does not need links between nearby sections. This leaves fewer distractions around the main content.
+--> 
+
+  <header>
+    <a class="brand" href="#">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 4C10 2 3 6 5 14s14 7 15-10Z" />
+        <path d="M4 21 15 10" />
+      </svg>
+
+      <span>
+        Quiet Focus
+      <small>YOUR OWN STUDY SPACE</small>
+      </span>
+    </a>
+
+
+    <button id="theme-button" aria-pressed="false">
+      Night mode
+    </button>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p class="eyebrow">A SMALL PAUSE. A FRESH START.</p>
+
+      <h1>A little room <em>to breathe.</em></h1>
+
+      <p>
+        Let the music settle in.
+        Take a breath and start to focus.
+      </p>
+    </section>
+
+    <div class="workspace">
+<!--
+  I made the music player proportionatly larger than the timer because I think listening is the main experience.
+  I place the landscape image within the player, to enhance the atomsphere. 
+-->
+      <section id="player" class="card" aria-labelledby="track-title">
+        <div class="landscape">
+          <img src="assets/quiet-landscape.svg"alt="decorative image">
+
+          <span class="scene-label">
+            SLOW DOWN &amp; SETTLE IN
+          </span>
+
+          <p class="scene-copy">
+            <small>YOUR QUIET CORNER</small>
+            Be here,<br>
+            for a while.
+          </p>
+        </div>
+
+        <div class="player-body">
+          <p class="eyebrow">NOW LISTENING</p>
+
+          <h2 id="track-title">A quiet moment</h2>
+
+          <p class="muted">Ambient music</p>
+
+          <audio id="music" src="assets/quiet-moment.mp3" preload="metadata" loop controls></audio>
+
+
+          <div id="music-controls" hidden>
+            <label class="sr-only" for="seek">
+              Music position
+            </label>
+
+            <input id="seek" type="range" min="0" max="100" step="0.1" value="0" disabled>
+
+            <div class="time-labels">
+              <span id="elapsed">0:00</span>
+              <span id="duration">—:—</span>
+            </div>
+
+            <div class="transport">
+              <button id="loop-button" aria-pressed="true">
+                Loop: on
+              </button>
+
+              <button id="play-button" class="primary">
+                Play
+              </button>
+
+              <label class="volume">
+                Volume
+
+                <input id="volume" type="range" min="0" max="100" value="50">
+              </label>
+            </div>
+          </div>
+
+          <p id="music-message" class="note" role="status">
+            Ready when you are.
+          </p>
+        </div>
+      </section>
+      
+      <!-- I designed the three presets to make choosing a time session quicker. However, after consideration, I added custom choice of time setting, from 0.5-180 minutes, 
+           because I think fixed choices may not suit every user needs. I also added several guidence notes within the timer, that can better help user to understand how to use it.
+      -->
+      <section id="focus" class="card focus-panel" aria-labelledby="focus-title">
+        <p class="eyebrow">A MOMENT JUST FOR YOU</p>
+
+        <h2 id="focus-title"> Set up your time</h2>
+
+        <p class="muted">
+          One task. One time. Build a calmer mind.
+        </p>
+
+        <div class="duration-options" aria-label="Focus duration">
+          <button data-minutes="25" class="selected" aria-pressed="true">
+            25 min
+          </button>
+
+          <button data-minutes="45" aria-pressed="false">
+            45 min
+          </button>
+
+          <button data-minutes="60" aria-pressed="false">
+            60 min
+          </button>
+        </div>
+
+
+        <form id="custom-time-form" class="custom-time">
+          <label for="custom-minutes">Your own pace</label>
+
+          <div>
+            <input id="custom-minutes" type="number" min="0.5" max="180" step="0.5" placeholder="Minutes"
+              aria-describedby="time-hint" required>
+
+            <button type="submit">Set</button>
+          </div>
+
+          <small id="time-hint">
+            0.5–180 minutes, in steps of 0.5
+          </small>
+        </form>
+
+        <div class="timer-area">
+          <p id="timer" role="timer" aria-label="Time remaining">
+            25:00
+          </p>
+
+          <p class="eyebrow">
+            A LITTLE TIME FOR YOURSELF
+          </p>
+        </div>
+
+        <div class="timer-actions">
+          <button id="start-button" class="primary">
+            Start timer
+          </button>
+
+          <button id="reset-button">Reset</button>
+        </div>
+
+        <p id="timer-message" class="note" role="status">
+          Choose a time, then start.
+        </p>
+
+        <p class="timer-help">
+          Music and timer have separate controls.<br>
+          When the timer ends, the music pauses.
+        </p>
+      </section>
+        </div>
+
+    <section id="about" class="about">
+      <div>
+        <p class="eyebrow">LESS NOISE. MORE SPACE.</p>
+
+        <h2>Find your own pace</h2>
+      </div>
+
+      <p>
+        Play the music, choose a focus time, and begin when you are ready.
+        Pause either one whenever you need.
+        When the timer ends, the music pauses to remind you to take a break.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+
+    <details>
+      <summary>Sources</summary>
+
+      <p>
+        Music: downloaded from epidemicsound.com
+      </p>
+    </details>
+
+  </footer>
+</body>
+
+</html>
