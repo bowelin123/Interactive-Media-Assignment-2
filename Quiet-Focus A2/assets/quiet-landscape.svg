@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 740">
+<defs>
+<linearGradient id="sky" x2="0" y2="1"><stop stop-color="#dde4db"/><stop offset="1" stop-color="#ecead6"/></linearGradient>
+<linearGradient id="water" x2="0" y2="1"><stop stop-color="#a8b9aa"/><stop offset="1" stop-color="#456d61"/></linearGradient>
+<linearGradient id="foreground" x2="1" y2="1"><stop stop-color="#143e37"/><stop offset="1" stop-color="#2d5546"/></linearGradient>
+<filter id="mist"><feGaussianBlur stdDeviation="13"/></filter>
+<g id="pine"><path d="M0 0-23 45h12l-24 38h18l-30 46h94L17 83h18L11 45h12Z"/><path d="M-3 125h6v35h-6Z"/></g>
+</defs>
+<path fill="url(#sky)" d="M0 0h1200v740H0z"/>
+<circle cx="808" cy="149" r="61" fill="#f7f0cf" opacity=".9"/>
+<path d="m0 290 152-82 90 45 123-130 115 121 119-77 132 123 122-93 85 44 121-96 141 143v210H0Z" fill="#a9b9ad"/>
+<path d="m0 341 204-123 96 99 114-38 149 104 141-117 158 127 89-114 151 85 98-31v180H0Z" fill="#829e8e"/>
+<path d="m0 395 158-38 189 84 154-31 129 32 151-89 169 68 141-47 109 49v100H0Z" fill="#608475"/>
+<path d="M0 452q180-44 355 5t362 0 483-6v289H0Z" fill="url(#water)"/>
+<path d="M20 452q300-26 586 1t564 2M154 470q200-22 493-1t444-3" fill="none" stroke="#e1e6cc" stroke-width="18" opacity=".42" filter="url(#mist)"/>
+<g fill="none" stroke="#d6dcc9" stroke-linecap="round" opacity=".22"><path d="M635 510h185m-85 24h169m-328 32h165m-24 31h197m-211 33h109m-309 14h133m266 37h176" stroke-width="3"/><path d="M317 488h84m419 54h69m-398 74h90m-350-79h69m560 86h94" stroke-width="2"/></g>
+<path d="M0 620q79-119 157-91t142 114 235 97H0Z" fill="url(#foreground)"/>
+<path d="M966 740q125-118 234-133v133Z" fill="#234f43"/>
+<g fill="#244e40"><use href="#pine" transform="translate(37 282) scale(1.8)"/><use href="#pine" transform="translate(111 353) scale(1.5)"/><use href="#pine" transform="translate(183 411) scale(1.03)"/><use href="#pine" transform="translate(240 481) scale(.64)"/></g>
+<g fill="#183d34"><use href="#pine" transform="translate(12 424) scale(1.7)"/><use href="#pine" transform="translate(120 464) scale(1.25)"/><use href="#pine" transform="translate(1178 437) scale(1.7)"/><use href="#pine" transform="translate(1106 534) scale(.95)"/></g>
+</svg>
